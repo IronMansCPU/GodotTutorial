@@ -1,0 +1,14 @@
+extends Area2D
+
+
+@onready var timer = $Timer
+
+func _on_body_entered(body: Node2D) -> void:
+	print("Player Died")
+	timer.start()
+	
+
+func _on_timer_timeout() -> void:
+	#restart game
+	get_tree().reload_current_scene()
+	
