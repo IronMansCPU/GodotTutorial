@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhe1nqkedy08u"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_glrpc"]
+[ext_resource type="FontFile" uid="uid://4jm4jkl646em" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_iac3f"]
+
+[node name="PauseMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 29.0
+offset_right = -24.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glrpc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -90.0
+offset_right = 130.0
+offset_bottom = 142.0
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
+theme_override_fonts/font = ExtResource("1_iac3f")
+text = "Reusme "
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iac3f")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Resume")
+theme_override_fonts/font = ExtResource("1_iac3f")
+text = "Quit "
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
