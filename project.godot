@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Music="*res://Scences/music.tscn"
 EventController="*res://Scripts/eventController.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 jump={
