@@ -5,6 +5,31 @@
 [ext_resource type="AudioStream" uid="uid://crv1jrnpvyv0b" path="res://Assets/sounds/slime death.wav" id="2_eoopm"]
 [ext_resource type="PackedScene" uid="uid://byxf6sgjudh8y" path="res://Scences/kill_zone.tscn" id="2_xsev4"]
 
+[sub_resource type="Animation" id="Animation_jrfqh"]
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../KillZone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../KillZone:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="Animation" id="Animation_mgb60"]
 resource_name = "death_animation"
 tracks/0/type = "method"
@@ -50,8 +75,18 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/2/use_blend = true
-
-[sub_resource type="Animation" id="Animation_jrfqh"]
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../KillZone:collision_mask")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s34ij"]
 _data = {
@@ -131,7 +166,6 @@ autoplay = "idle"
 
 [node name="KillZone" parent="." instance=ExtResource("2_xsev4")]
 position = Vector2(0, -6)
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("RectangleShape2D_fmeno")
@@ -142,7 +176,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeadHitBox"]
 position = Vector2(0, -1)
+rotation = -3.14159
 shape = SubResource("RectangleShape2D_12dv3")
+one_way_collision = true
 
 [node name="DeathNoise" type="AudioStreamPlayer2D" parent="."]
 
