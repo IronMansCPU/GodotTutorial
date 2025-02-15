@@ -139,7 +139,7 @@ animations = [{
 size = Vector2(8.5, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12dv3"]
-size = Vector2(11, 2.5)
+size = Vector2(13.375, 2.5)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_heita")
@@ -166,6 +166,7 @@ autoplay = "idle"
 
 [node name="KillZone" parent="." instance=ExtResource("2_xsev4")]
 position = Vector2(0, -6)
+rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("RectangleShape2D_fmeno")

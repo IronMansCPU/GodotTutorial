@@ -1,7 +1,11 @@
 extends Node2D
 
+@onready var pause_menu: Control = $UI/PauseMenu
+#@onready var pause_menu: Control = $Player/Camera2D/CoinCanvas/PauseMenu
 
-@onready var pause_menu: Control = $Player/PauseMenu
+
+#@onready var pause_menu: Control = $Player/Camera2D/PauseMenuCanvas/PauseMenu
+
 
 var paused = false
 # Called when the node enters the scene tree for the first time.

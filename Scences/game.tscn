@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c7yfbno06v2w6" path="res://Scences/coin.tscn" id="4_o42gr"]
 [ext_resource type="PackedScene" uid="uid://byxf6sgjudh8y" path="res://Scences/kill_zone.tscn" id="5_06hi4"]
 [ext_resource type="FontFile" uid="uid://bfjvuo5ujkguk" path="res://Assets/fonts/PixelOperator8.ttf" id="6_2diy6"]
+[ext_resource type="PackedScene" uid="uid://cat8kvvxgtv6u" path="res://Scences/UICanvas.tscn" id="6_nynoy"]
 [ext_resource type="PackedScene" uid="uid://5y4pii7pshe4" path="res://Scences/slime.tscn" id="6_wd6v8"]
-[ext_resource type="PackedScene" uid="uid://bhe1nqkedy08u" path="res://Scences/pause_menu.tscn" id="11_uaw8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jr3g"]
 texture = ExtResource("1_xhya5")
@@ -233,6 +233,8 @@ _data = {
 [node name="Game" type="Node2D"]
 script = ExtResource("1_l4m6j")
 
+[node name="UI" parent="." instance=ExtResource("6_nynoy")]
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_hx4dm")
@@ -268,10 +270,6 @@ zoom = Vector2(4, 4)
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="PauseMenu" parent="Player" instance=ExtResource("11_uaw8q")]
-offset_top = -1.0
-offset_bottom = -1.0
 
 [node name="KillZone" parent="." instance=ExtResource("5_06hi4")]
 position = Vector2(0, 32)

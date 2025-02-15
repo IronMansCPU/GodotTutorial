@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://4jm4jkl646em" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_iac3f"]
 
 [node name="PauseMenu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
