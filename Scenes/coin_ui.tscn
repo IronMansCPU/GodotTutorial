@@ -10,34 +10,34 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 30.0
-offset_right = -1022.0
-offset_bottom = -588.0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = -1056.0
+offset_bottom = -603.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0tg2t")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 11.0
-scale = Vector2(2, 2)
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = 7.0
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_weauv")
 expand_mode = 1
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 3.0
-offset_right = 52.0
-offset_bottom = 22.0
+offset_left = 13.0
+offset_top = -7.0
+offset_right = 29.0
+offset_bottom = 16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0.6, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0.776471, 1)
 theme_override_fonts/font = ExtResource("2_j3tgk")
+theme_override_font_sizes/font_size = 0
 text = "0
 "
 horizontal_alignment = 1

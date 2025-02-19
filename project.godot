@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="TutorialGodot"
-run/main_scene="res://Scences/game.tscn"
+run/main_scene="res://Scenes/game_manager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://Scences/music.tscn"
+Music="*res://Scenes/music.tscn"
 EventController="*res://Scripts/eventController.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 

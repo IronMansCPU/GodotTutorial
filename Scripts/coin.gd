@@ -1,7 +1,8 @@
 extends Area2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var gameManager = %GameManager
+#@onready var gameManager = %GameManager
 func _on_body_entered(body: Node2D) -> void:
-	gameManager.add_point()
+	Global.game_controller.add_point() 
 	animation_player.play("pickupAnimation")
+	

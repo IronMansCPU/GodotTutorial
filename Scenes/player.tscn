@@ -1,90 +1,90 @@
 [gd_scene load_steps=26 format=3 uid="uid://b08utn6g37mfv"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ri7f8"]
-[ext_resource type="Texture2D" uid="uid://cpc8f10r14i0c" path="res://Assets/sprites/knight.png" id="1_wh16k"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_sa812"]
+[ext_resource type="Texture2D" uid="uid://cpc8f10r14i0c" path="res://Assets/sprites/knight.png" id="2_6foub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5bi1"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tupju"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4cmy"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hk0qf"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ot2xn"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(64, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwv2o"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hmhi"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhhl4"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5b1u"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4148s"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wm3f"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6p2w"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(192, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilb87"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(224, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rycw1"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcr2j"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvusr"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36uy0"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(96, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m866h"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(128, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bjvw"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t73wt"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(192, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vpv0"]
-atlas = ExtResource("1_wh16k")
+atlas = ExtResource("2_6foub")
 region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wwulb"]
@@ -174,14 +174,13 @@ radius = 5.0
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
-script = ExtResource("1_ri7f8")
+script = ExtResource("1_sa812")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_wwulb")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.117577
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -5)

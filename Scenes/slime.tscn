@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://klhxj1esv7y3" path="res://Assets/sprites/slime_green.png" id="1_84vla"]
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_heita"]
 [ext_resource type="AudioStream" uid="uid://crv1jrnpvyv0b" path="res://Assets/sounds/slime death.wav" id="2_eoopm"]
-[ext_resource type="PackedScene" uid="uid://byxf6sgjudh8y" path="res://Scences/kill_zone.tscn" id="2_xsev4"]
+[ext_resource type="PackedScene" uid="uid://byxf6sgjudh8y" path="res://Scenes/kill_zone.tscn" id="2_xsev4"]
 
 [sub_resource type="Animation" id="Animation_jrfqh"]
 tracks/0/type = "method"
@@ -139,7 +139,7 @@ animations = [{
 size = Vector2(8.5, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12dv3"]
-size = Vector2(13.375, 2.5)
+size = Vector2(12.6875, 2.25002)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_heita")

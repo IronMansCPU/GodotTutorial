@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjewjevex8eu1"]
+
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_25oyo"]
+[ext_resource type="PackedScene" uid="uid://qvs1bp5wpsbf" path="res://Scenes/level1.tscn" id="2_ldmv0"]
+[ext_resource type="PackedScene" uid="uid://cat8kvvxgtv6u" path="res://Scenes/UICanvas.tscn" id="3_rmaih"]
+
+[node name="GameManager" type="Node" node_paths=PackedStringArray("world_2d", "gui")]
+script = ExtResource("1_25oyo")
+world_2d = NodePath("WorldLevels")
+gui = NodePath("GUI")
+
+[node name="WorldLevels" type="Node2D" parent="."]
+
+[node name="Level1" parent="WorldLevels" instance=ExtResource("2_ldmv0")]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" parent="GUI" instance=ExtResource("3_rmaih")]
