@@ -6,7 +6,8 @@ class_name GameController extends Node
 
 
 var paused = false # if game is paused or not 
-var current_score = 0  # coins score 
+var current_score = 0  # coins score
+var saved_coins = 0 
 var current_2d_scene
 var current_gui_scene 
 #var current_3d_scene 
@@ -45,12 +46,21 @@ func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool 
 	var new = load(new_scene).instantiate()
 	world_2d.add_child(new)
 	current_2d_scene = new 
+	
+	_update_score_label()
 
 # Called when the node enters the scene tree for the first time.
 func add_point():
 	current_score +=1
 	EventController.emit_signal("coin_collected", current_score)
 	
+func _update_score_label():
+	var score_label = gui.get_node("UI/CoinUI/Label")
+	if score_label:
+		if saved_coins!=0:
+			score_label.text = str(saved_coins)
+		else:
+			score_label.text = str(current_score)  # Set the correct score value
 
 func _pauseMenu():
 	if paused:

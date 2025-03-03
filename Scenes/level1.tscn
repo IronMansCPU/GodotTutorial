@@ -382,4 +382,4 @@ text = "Falling hurts..."
 position = Vector2(33, 45)
 
 [node name="Portal" parent="." instance=ExtResource("12_20arp")]
-position = Vector2(21, -29)
+position = Vector2(1213, -83)
