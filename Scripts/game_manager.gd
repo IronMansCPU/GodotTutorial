@@ -11,6 +11,8 @@ var saved_coins = 0
 var current_2d_scene
 var current_gui_scene 
 #var current_3d_scene 
+
+var current_level = 0 # stores the current level that is loaded (index number for list in Portal.gd)
 func _ready() -> void:
 	Global.game_controller = self 
 	current_2d_scene = $WorldLevels/Level1
