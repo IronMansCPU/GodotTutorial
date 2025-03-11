@@ -180,13 +180,13 @@ script = ExtResource("1_sa812")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_wwulb")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.499346
+
+[node name="Sword" parent="AnimatedSprite2D" instance=ExtResource("3_t537x")]
+position = Vector2(3, 10)
+rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -5)
 shape = SubResource("CircleShape2D_4nakt")
-
-[node name="Sword" parent="." instance=ExtResource("3_t537x")]
-position = Vector2(4, -5)

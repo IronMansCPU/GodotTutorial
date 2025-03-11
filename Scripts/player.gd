@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 130
 const JUMP_VELOCITY = -300
+var playerDirection
 @onready var character_sprite = $AnimatedSprite2D
 func _physics_process(delta: float) -> void: #runs at 60 times per second (60fps) 
 	# Add the gravity.
@@ -22,8 +23,10 @@ func _physics_process(delta: float) -> void: #runs at 60 times per second (60fps
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction > 0 :
 		character_sprite.flip_h = false
+		playerDirection = "right" 
 	elif direction < 0 :
 		character_sprite.flip_h = true
+		playerDirection = "left" 
 	
 	if is_on_floor():
 		#play animations
