@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 const SPEED = 60
 var direction =1 
@@ -13,8 +13,6 @@ var direction =1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var hitpoints = 2
 
-
-	
 func _process(delta: float) -> void:
 	if ray_cast_right.is_colliding():
 		direction = -1
@@ -22,7 +20,14 @@ func _process(delta: float) -> void:
 	if ray_cast_left.is_colliding():
 		direction = 1
 		slime_sprite.flip_h = false
-	position.x += direction * SPEED * delta
+	velocity.x = direction * SPEED
+	
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	else:
+		velocity.y = 0  # Reset when on the floor
+		
+	move_and_slide()
 	
 func _on_head_hit_box_body_entered(body: Node2D) -> void:
 	print("Slime Killed")

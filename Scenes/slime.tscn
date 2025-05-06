@@ -1,10 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://5y4pii7pshe4"]
+[gd_scene load_steps=23 format=3 uid="uid://5y4pii7pshe4"]
 
 [ext_resource type="Texture2D" uid="uid://klhxj1esv7y3" path="res://Assets/sprites/slime_green.png" id="1_84vla"]
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_heita"]
 [ext_resource type="AudioStream" uid="uid://crv1jrnpvyv0b" path="res://Assets/sounds/slime death.wav" id="2_eoopm"]
 [ext_resource type="PackedScene" uid="uid://byxf6sgjudh8y" path="res://Scenes/kill_zone.tscn" id="2_xsev4"]
 [ext_resource type="Script" path="res://Scripts/HurtBox.gd" id="5_tjb4e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xciue"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_jrfqh"]
 tracks/0/type = "method"
@@ -183,8 +186,12 @@ size = Vector2(12.6875, 2.25002)
 radius = 9.0
 height = 18.0
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_heita")
+
+[node name="SlimeMoveBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_xciue")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../HeadHitBox")
@@ -231,7 +238,7 @@ one_way_collision = true
 script = ExtResource("5_tjb4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -6)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_xxea5")
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="." method="_on_timer_timeout"]
